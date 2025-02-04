@@ -196,7 +196,7 @@ export default function Footer() {
             </div>
             <div className="text-left">
               <div className="text-sm text-[#25D366] font-medium">
-                What'sapp
+                What&apos;sapp
               </div>
               <a
                 href="#"

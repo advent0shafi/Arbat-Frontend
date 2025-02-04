@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import SectionContainer from "../components/section-container";
 import { LightBulb, PlaneSVG, Residential } from "../components/svg-components";
 
 export function HeroSection() {

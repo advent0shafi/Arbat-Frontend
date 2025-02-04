@@ -59,7 +59,7 @@ export default function PricingPage() {
             price={plan.price}
             description={plan.description}
             features={plan.features}
-            buttonColor={plan.buttonColor}
+           
           />
         ))}
       </div>

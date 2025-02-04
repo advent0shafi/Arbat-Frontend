@@ -11,7 +11,6 @@ export function PricingCard({
   price,
   description,
   features,
-  buttonColor = "bg-[#262626]",
 }: PricingCardProps) {
   return (
     <div className="group">

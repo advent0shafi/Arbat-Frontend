@@ -21,7 +21,7 @@ export default function SectionH8() {
               beyond the initial paperwork.
             </p>
             <p className="mt-6 text-[20px] font-poppins leading-[30px] text-gray-600">
-              Our many support services are inspired by our clients' daily needs and have been designed especially to help
+              Our many support services are inspired by our clients&apos; daily needs and have been designed especially to help
               you get the ball rolling and focus on what really matters.
             </p>
           </div>

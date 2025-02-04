@@ -59,7 +59,7 @@ export function TestimonialCard({
       </div>
       <StarRating rating={rating} />
       <blockquote className="text-[18px]  font-normal text-black leading-[27px] ">
-        "{quote}"
+      &quot;{quote}&quot;
       </blockquote>
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">

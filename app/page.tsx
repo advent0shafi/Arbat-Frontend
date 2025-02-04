@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { HeroSection } from "./sections/sectionH1";
 import SectionH2 from "./sections/sectionH2";
 import SectionH3 from "./sections/sectionH3";
