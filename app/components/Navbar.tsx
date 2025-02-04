@@ -39,8 +39,13 @@ export function NavBar() {
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">MAIN LAND</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="/free-zone-company-setup" className="block text-sm hover:text-[#ac1b13]">
                             Overview
+                          </Link>
+                        </li>
+                        <li>
+                          <Link href="/free-zone-business-activities" className="block text-sm hover:text-[#ac1b13]">
+                            Business Activities
                           </Link>
                         </li>
                         <li>
@@ -53,11 +58,7 @@ export function NavBar() {
                             Dubai Mainland License
                           </Link>
                         </li>
-                        <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
-                            Business Activities
-                          </Link>
-                        </li>
+                        
                         <li>
                           <Link href="#" className="block text-sm hover:text-[#ac1b13]">
                             Mainland Visas
@@ -147,7 +148,7 @@ export function NavBar() {
                 Services
               </button>
               {activeDropdown === "services" && (
-                <div className="absolute left-0 mt-2 w-[800px] bg-white border border-gray-200 rounded-md shadow-lg p-6">
+                <div className="absolute -left-96 mt-2 w-[800px] bg-white border border-gray-200 rounded-md shadow-lg p-6">
                   <div className="grid grid-cols-3 gap-8">
                     <div>
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">CORPORATE SERVICES</h3>

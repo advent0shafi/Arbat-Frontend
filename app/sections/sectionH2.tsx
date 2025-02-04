@@ -10,7 +10,7 @@ export default function SectionH2() {
     <div className="py-[96px]">
       <SectionContainer>
         <div>
-          <h2 className="font-plus-jakarta font-bold text-[32px] leading-[48px] text-center mb-[8px]">
+          <h2 className="font-plus-jakarta font-bold md:text-[32px] text-[25.31px] md:leading-[48px] text-center mb-[8px]">
             Why Choose Arbat Corporate?
           </h2>
           <div className="flex justify-center items-center w-full ">
