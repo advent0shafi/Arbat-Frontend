@@ -3,8 +3,10 @@ import SectionContainer from "./section-container";
 
 interface FreeZoneHeroProps {
     professionalImagesrc: string;
+    title:string;
+    descriptions:string;
 }
-export default function FreeZoneHero({ professionalImagesrc }: FreeZoneHeroProps) {
+export default function FreeZoneHero({ professionalImagesrc,title,descriptions }: FreeZoneHeroProps) {
   return (
     <div className="relative overflow-hidden">
       <Image
@@ -21,14 +23,11 @@ export default function FreeZoneHero({ professionalImagesrc }: FreeZoneHeroProps
               Free Zone
             </h3>
             <h2 className="font-plus-jakarta font-extrabold  text-[34px] leading-[43.6px] text-white">
-              Our Solution
+             {title}
             </h2>
 
-            <p className="font-plus-jakarta font-medium md:text-[24px] text-[18px] leading-[24px] md:leading-[30px] text-white mt-[36px]">
-              The Free Zone jurisdiction offers 100% foreign ownership, making
-              it an ideal choice for wholesale distributors, re-exporters,
-              warehousing operations, service providers, and manufacturers
-              focusing on markets beyond the MENA region.
+            <p className="font-plus-jakarta font-medium md:text-[20px] text-[18px] leading-[20px] md:leading-[30px] text-white mt-[36px]">
+              {descriptions}
             </p>
           </div>
         </SectionContainer>
@@ -37,16 +36,16 @@ export default function FreeZoneHero({ professionalImagesrc }: FreeZoneHeroProps
       <Image
         src={`/images/${professionalImagesrc}`}
         alt="images"
-        width={700}
+        width={400}
         height={502}
-        className=" h-[485px] w-[700px]   absolute -bottom-10 -right-44 z-10 md:block hidden"
+        className=" h-[485px] w-[400px]   absolute -bottom-10 -right-10 z-10 md:block hidden"
       />
       <Image
         src={"/logo/mainbiglogo.png"}
         alt="layer"
         width={735}
         height={368}
-        className="absolute bottom-0 right-0 opacity-20 md:block hidden"
+        className="absolute bottom-0 right-8 opacity-40 md:block hidden"
       />
     </div>
   );

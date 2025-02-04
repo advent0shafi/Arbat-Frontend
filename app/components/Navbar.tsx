@@ -39,12 +39,12 @@ export function NavBar() {
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">MAIN LAND</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="/free-zone-company-setup" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
                             Overview
                           </Link>
                         </li>
                         <li>
-                          <Link href="/free-zone-business-activities" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
                             Business Activities
                           </Link>
                         </li>
@@ -54,8 +54,8 @@ export function NavBar() {
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
-                            Dubai Mainland License
+                          <Link href="/company-registration" className="block text-sm hover:text-[#ac1b13]">
+                          Company Registration
                           </Link>
                         </li>
                         
@@ -75,17 +75,17 @@ export function NavBar() {
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">FREE ZONE</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="/free-zone-company-setup" className="block text-sm hover:text-[#ac1b13]">
                             Overview
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="/free-zone-business-activities" className="block text-sm hover:text-[#ac1b13]">
                             Business Activities
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="/free-zone-license-locations " className="block text-sm hover:text-[#ac1b13]">
                             Free Zone License
                           </Link>
                         </li>
@@ -95,7 +95,7 @@ export function NavBar() {
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="/uae-residence-visa" className="block text-sm hover:text-[#ac1b13]">
                             UAE Residence Visa
                           </Link>
                         </li>
