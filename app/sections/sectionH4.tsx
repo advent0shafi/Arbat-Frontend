@@ -40,12 +40,11 @@ export default function SectionH4() {
               </div>
 
               <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                Business Consulting & Setup
+              Golden Visa Assistance
               </h3>
               <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                Transform your vision into reality with tailored business
-                consulting. From strategy to seamless setup, we guide you in the
-                UAE&apos;s dynamic market.
+              Unlock exclusive UAE Golden Visa benefits for you and your family. We simplify the process for hassle-free long-term residency.
+               
               </p>
               <div className="w-full flex flex-col justify-center items-center">
                 <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -61,12 +60,11 @@ export default function SectionH4() {
               </div>
 
               <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                Business Consulting & Setup
+              PRO Services
               </h3>
               <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                Transform your vision into reality with tailored business
-                consulting. From strategy to seamless setup, we guide you in the
-                UAE&apos;s dynamic market.
+              Focus on growth while we handle documentation and approvals. Our PRO services ensure smooth regulatory compliance and government interaction.
+                
               </p>
               <div className="w-full flex flex-col justify-center items-center">
                 <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -84,12 +82,10 @@ export default function SectionH4() {
               </div>
 
               <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                Business Consulting & Setup
+              Accounting & Compliance
               </h3>
               <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                Transform your vision into reality with tailored business
-                consulting. From strategy to seamless setup, we guide you in the
-                UAE&apos;s dynamic market.
+              Keep your finances compliant and optimized with expert accounting. We ensure accurate records and adherence to local regulations.
               </p>
               <div className="w-full flex flex-col justify-center items-center">
                 <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -105,12 +101,10 @@ export default function SectionH4() {
               </div>
 
               <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                Business Consulting & Setup
+              Government Services
               </h3>
               <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                Transform your vision into reality with tailored business
-                consulting. From strategy to seamless setup, we guide you in the
-                UAE&apos;s dynamic market.
+              Effortlessly manage approvals and renewals with our government services. We simplify processes, saving you time and effort.
               </p>
               <div className="w-full flex flex-col justify-center items-center">
                 <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -123,7 +117,7 @@ export default function SectionH4() {
           <div className="flex flex-col items-center mt-[80px]">
             <Company />
             <h2 className="font-plus-jakarta font-bold text-[32px] leading-[48px] mt-[16px]">
-              Corporate Services
+            Luxury Services
             </h2>
             <div className="grid md:grid-cols-3 grid-cols-1 gap-[48px]">
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
@@ -134,12 +128,10 @@ export default function SectionH4() {
                 </div>
 
                 <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                  Business Consulting & Setup
-                </h3>
+                Jet Chartering                </h3>
                 <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                  Transform your vision into reality with tailored business
-                  consulting. From strategy to seamless setup, we guide you in
-                  the UAE&apos;s dynamic market.
+                Travel in luxury with our bespoke private jet chartering services. Enjoy personalized arrangements for business or leisure trips.
+                 
                 </p>
                 <div className="w-full flex flex-col justify-center items-center">
                   <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -155,12 +147,11 @@ export default function SectionH4() {
                 </div>
 
                 <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                  Business Consulting & Setup
+                Luxury Real Estate
                 </h3>
                 <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                  Transform your vision into reality with tailored business
-                  consulting. From strategy to seamless setup, we guide you in
-                  the UAE&apos;s dynamic market.
+                Explore premium properties with our expert real estate services. We assist in buying, selling, and renting exclusive properties.
+  
                 </p>
                 <div className="w-full flex flex-col justify-center items-center">
                   <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -176,12 +167,10 @@ export default function SectionH4() {
                 </div>
 
                 <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                  Business Consulting & Setup
+                VIP Concierge
                 </h3>
                 <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                  Transform your vision into reality with tailored business
-                  consulting. From strategy to seamless setup, we guide you in
-                  the UAE&apos;s dynamic market.
+                Experience convenience with our VIP concierge services. From luxury transportation to event planning, we handle it all.
                 </p>
                 <div className="w-full flex flex-col justify-center items-center">
                   <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -194,7 +183,7 @@ export default function SectionH4() {
           <div className="flex flex-col items-center mt-[80px]">
             <Company />
             <h2 className="font-plus-jakarta font-bold text-[32px] leading-[48px] mt-[16px]">
-              Corporate Services
+            Specialized Solutions
             </h2>
             <div className="grid md:grid-cols-3 grid-cols-1 gap-[48px]">
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
@@ -205,12 +194,11 @@ export default function SectionH4() {
                 </div>
 
                 <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                  Business Consulting & Setup
+                Trademark Registration
                 </h3>
                 <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                  Transform your vision into reality with tailored business
-                  consulting. From strategy to seamless setup, we guide you in
-                  the UAE&apos;s dynamic market.
+                  Safeguard your brand with our trademark registration services. Protect your intellectual property with expert guidance.
+               
                 </p>
                 <div className="w-full flex flex-col justify-center items-center">
                   <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -226,12 +214,11 @@ export default function SectionH4() {
                 </div>
 
                 <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                  Business Consulting & Setup
+                HSE Compliance
                 </h3>
                 <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                  Transform your vision into reality with tailored business
-                  consulting. From strategy to seamless setup, we guide you in
-                  the UAE&apos;s dynamic market.
+                  Ensure safety with our Health, Safety, and Environmental compliance services. We help you meet regulatory standards seamlessly.
+                  
                 </p>
                 <div className="w-full flex flex-col justify-center items-center">
                   <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">
@@ -247,12 +234,10 @@ export default function SectionH4() {
                 </div>
 
                 <h3 className="font-plus-jakarta font-bold text-[24px] leading-[36px] text-center mb-[12px]">
-                  Business Consulting & Setup
+                Virtual Office Setup
                 </h3>
                 <p className="text-gray-500 font-poppins text-[16px] leading-[24px] text-center ">
-                  Transform your vision into reality with tailored business
-                  consulting. From strategy to seamless setup, we guide you in
-                  the UAE&apos;s dynamic market.
+                Establish credibility with our professional virtual office solutions. Flexible and affordable options tailored to your business.
                 </p>
                 <div className="w-full flex flex-col justify-center items-center">
                   <button className="px-[20px] py-[14px] rounded-[6px] text-[#AC1B13] font-bold leading-[21px] border border-[#AC1B13] mt-[24px]">

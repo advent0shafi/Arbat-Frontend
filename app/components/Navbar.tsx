@@ -1,9 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion" // NEW: Import Framer Motion
+import { Facebook, Instagram, Linkedin, Twitter, X } from "lucide-react"
 
 type NavItem = {
   title: string
@@ -100,6 +101,17 @@ const navItems: NavItem[] = [
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20
+      setScrolled(isScrolled)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const toggleDropdown = (menu: string) => {
     setActiveDropdown(activeDropdown === menu ? null : menu)
@@ -109,12 +121,16 @@ export function NavBar() {
   const closeMobileNav = () => setIsOpen(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-white backdrop-blur-sm shadow-md" : "bg-white/50"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src={'/logo/logo_001.png'}
+              src={"/logo/logo_001.png"}
               alt="Arbat Corporate Services"
               width={120}
               height={40}
@@ -125,42 +141,69 @@ export function NavBar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <div className="relative group">
-              <button onClick={() => toggleDropdown("business")} className="text-gray-600 hover:text-gray-900 py-2">
+              <button
+                onClick={() => toggleDropdown("business")}
+                className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300"
+              >
                 Business Setup
               </button>
               {activeDropdown === "business" && (
-                <div className="absolute left-0 mt-2 w-[600px] bg-white border border-gray-200 rounded-md shadow-lg p-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute left-0 mt-2 w-[600px] bg-white/95 backdrop-blur-sm border border-gray-200 rounded-md shadow-lg p-6"
+                >
                   <div className="grid grid-cols-2 gap-8">
                     <div>
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">MAIN LAND</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Overview
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Business Activities
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Sponsorship
                           </Link>
                         </li>
                         <li>
-                          <Link href="/company-registration" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="/company-registration"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Company Registration
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Mainland Visas
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             VirtuFit
                           </Link>
                         </li>
@@ -170,106 +213,169 @@ export function NavBar() {
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">FREE ZONE</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="/free-zone-company-setup" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="/free-zone-company-setup"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Overview
                           </Link>
                         </li>
                         <li>
-                          <Link href="/free-zone-business-activities" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="/free-zone-business-activities"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Business Activities
                           </Link>
                         </li>
                         <li>
-                          <Link href="/free-zone-license-locations" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="/free-zone-license-locations"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Free Zone License
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Locations and Pricing
                           </Link>
                         </li>
                         <li>
-                          <Link href="/uae-residence-visa" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="/uae-residence-visa"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             UAE Residence Visa
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Registration Process
                           </Link>
                         </li>
                         <li>
-                          <Link href="/our-solution" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="/our-solution"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Our Solution
                           </Link>
                         </li>
                       </ul>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )}
             </div>
 
             <div className="relative group">
-              <button onClick={() => toggleDropdown("accounting")} className="text-gray-600 hover:text-gray-900 py-2">
+              <button
+                onClick={() => toggleDropdown("accounting")}
+                className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300"
+              >
                 Accounting & Tax
               </button>
               {activeDropdown === "accounting" && (
-                <div className="absolute left-0 mt-2 w-[300px] bg-white border border-gray-200 rounded-md shadow-lg p-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute left-0 mt-2 w-[300px] bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-md shadow-lg p-6"
+                >
                   <ul className="space-y-2">
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Overview
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Sponsorship
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Dubai Mainland License
                       </Link>
                     </li>
                   </ul>
-                </div>
+                </motion.div>
               )}
             </div>
 
             <div className="relative group">
-              <button onClick={() => toggleDropdown("services")} className="text-gray-600 hover:text-gray-900 py-2">
+              <button
+                onClick={() => toggleDropdown("services")}
+                className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300"
+              >
                 Services
               </button>
               {activeDropdown === "services" && (
-                <div className="absolute -left-96 mt-2 w-[800px] bg-white border border-gray-200 rounded-md shadow-lg p-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute -left-96 mt-2 w-[800px] bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-md shadow-lg p-6"
+                >
                   <div className="grid grid-cols-3 gap-8">
                     <div>
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">CORPORATE SERVICES</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Business Consulting & Setup
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Golden Visa Assistance
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             PRO Services
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Accounting & Compliance
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Government Services
                           </Link>
                         </li>
@@ -279,17 +385,26 @@ export function NavBar() {
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">LUXURY SERVICES</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Jet Chartering
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Luxury Real Estate
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             VIP Concierge
                           </Link>
                         </li>
@@ -299,94 +414,145 @@ export function NavBar() {
                       <h3 className="font-semibold mb-3 text-sm text-gray-500">SPECIALIZED SOLUTIONS</h3>
                       <ul className="space-y-2">
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Trademark Registration
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             HSE Compliance
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link
+                            href="#"
+                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                          >
                             Virtual Office Setup
                           </Link>
                         </li>
                       </ul>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               )}
             </div>
 
             <div className="relative group">
-              <button onClick={() => toggleDropdown("resources")} className="text-gray-600 hover:text-gray-900 py-2">
+              <button
+                onClick={() => toggleDropdown("resources")}
+                className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300"
+              >
                 Resources
               </button>
               {activeDropdown === "resources" && (
-                <div className="absolute left-0 mt-2 w-[300px] bg-white border border-gray-200 rounded-md shadow-lg p-6">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="absolute left-0 mt-2 w-[300px] bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-md shadow-lg p-6"
+                >
                   <ul className="space-y-2">
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         About
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Setup Guides
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Press
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Infographics
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Get a Trade License
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         E-commerce licence
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         How to start a business in Dubai
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Our Partners
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         FAQs
                       </Link>
                     </li>
                     <li>
-                      <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                      <Link
+                        href="#"
+                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
+                      >
                         Support Services
                       </Link>
                     </li>
                   </ul>
-                </div>
+                </motion.div>
               )}
             </div>
 
-            <Link href="/contact" className="text-gray-600 hover:text-gray-900">
+            <Link
+              href="/contact"
+              className="text-gray-600 hover:text-gray-900 transition-all duration-200 hover:translate-x-1"
+            >
               Contact Us
             </Link>
 
-            <button className="p-2 text-gray-600 hover:text-gray-900">
+            <button className="p-2 text-gray-600 hover:text-gray-900 transition-all duration-200 hover:translate-x-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -404,7 +570,10 @@ export function NavBar() {
               <span className="sr-only">Search</span>
             </button>
 
-            <Link href="/cost-calculator" className="bg-[#ac1b13] hover:bg-[#ac1b13]/90 text-white px-4 py-2 rounded">
+            <Link
+              href="/cost-calculator"
+              className="bg-[#ac1b13] hover:bg-[#ac1b13]/90 text-white px-4 py-2 rounded transition-all duration-200 hover:translate-x-1"
+            >
               Cost Calculator
             </Link>
           </nav>
@@ -413,7 +582,7 @@ export function NavBar() {
           <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900"
+              className="text-gray-600 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition-all duration-200 hover:translate-x-1"
             >
               <svg
                 fill="none"
@@ -434,22 +603,86 @@ export function NavBar() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="h-screen"
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              className="fixed inset-y-0 right-0 w-full max-w-sm bg-gradient-to-b from-white/95 to-gray-50/95 backdrop-blur-md shadow-2xl overflow-y-auto flex flex-col"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ type: "spring", damping: 20, stiffness: 100 }}
             >
-              {navItems.map((item, index) => (
-                <MobileNavItem key={index} item={item} closeMobileNav={closeMobileNav} />
-              ))}
+              {/* Close button */}
+              <div className="flex justify-end p-4">
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+                >
+                  <X className="w-6 h-6 text-gray-600" />
+                </button>
+              </div>
+
+              {/* Company Logo */}
+              <div className="flex justify-center items-center py-6 border-b border-gray-100">
+                <Image
+                  src={"/logo/logo_001.png"}
+                  alt="Arbat Corporate Services"
+                  width={150}
+                  height={50}
+                  className="h-12 w-auto"
+                />
+              </div>
+
+              {/* Navigation Items */}
+              <div className="flex-1 overflow-y-auto px-4 py-6">
+                {navItems.map((item, index) => (
+                  <MobileNavItem key={index} item={item} closeMobileNav={closeMobileNav} />
+                ))}
+              </div>
+
+              {/* Cost Calculator Button */}
               <Link
                 href="/cost-calculator"
                 onClick={closeMobileNav}
-                className="block px-4 py-2 mt-4 text-center border-t rounded-md text-base font-medium bg-[#ac1b13] text-white hover:bg-[#ac1b13]/90"
+                className="mx-4 my-4 text-center rounded-md text-base font-medium bg-[#ac1b13] text-white hover:bg-[#ac1b13]/90 transition-all duration-200 hover:scale-[0.98] py-3"
               >
                 Cost Calculator
               </Link>
+
+              {/* Social Media Icons */}
+              <div className="border-t border-gray-100 p-6">
+                <div className="flex justify-center space-x-6">
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-[#ac1b13] transition-colors duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Facebook className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-[#ac1b13] transition-colors duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Twitter className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-[#ac1b13] transition-colors duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Instagram className="w-6 h-6" />
+                  </a>
+                  <a
+                    href="#"
+                    className="text-gray-600 hover:text-[#ac1b13] transition-colors duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin className="w-6 h-6" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -476,7 +709,7 @@ function MobileNavItem({
       <div>
         <button
           onClick={toggleOpen}
-          className={`w-full text-left py-2 flex justify-between border-t items-center font-poppins  ${paddingClass}`}
+          className={`w-full text-left py-3 flex justify-between items-center font-plus-jakarta text-base font-medium text-gray-800 border-b border-gray-100 transition-all duration-200 hover:text-[#ac1b13] ${paddingClass}`}
         >
           {item.title}
           <svg
@@ -494,10 +727,10 @@ function MobileNavItem({
           {isOpen && (
             <motion.div
               className="ml-4"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, x: -20, height: 0 }}
+              animate={{ opacity: 1, x: 0, height: "auto" }}
+              exit={{ opacity: 0, x: -20, height: 0 }}
+              transition={{ duration: 0.2 }}
             >
               {item.children.map((child, index) => (
                 <MobileNavItem key={index} item={child} depth={depth + 1} closeMobileNav={closeMobileNav} />
@@ -516,9 +749,10 @@ function MobileNavItem({
       onClick={() => {
         if (closeMobileNav) closeMobileNav()
       }}
-      className={`block  py-2 hover:text-rose-700 text-sm font-plus-jakarta border-t font-bold transform  ${paddingClass}`}
+      className={`block py-3 text-gray-800 text-base font-plus-jakarta border-b border-gray-100 font-medium transform transition-all duration-200 hover:text-[#ac1b13] hover:pl-2 ${paddingClass}`}
     >
       {item.title}
     </Link>
   )
 }
+

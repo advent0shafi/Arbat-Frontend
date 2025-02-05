@@ -7,7 +7,7 @@ import {
 
 export default function SectionH2() {
   return (
-    <div className="py-[96px]">
+    <div className="pb-[96px] pt-[120px]">
       <SectionContainer>
         <div>
           <h2 className="font-plus-jakarta font-bold md:text-[32px] text-[25.31px] md:leading-[48px] text-center mb-[8px]">

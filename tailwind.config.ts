@@ -13,6 +13,11 @@ export default {
         "plus-jakarta": ["var(--font-plus-jakarta)", "sans-serif"],
         poppins: ["var(--font-poppins)", "sans-serif"],
       },
+      backgroundImage: {
+        "hero-pattern": "url('/layer/layer_03.svg')",  
+        "hero-pattern-md": "url('/layer/layer_04.png')",  
+        
+      },
     	extend: {
     		borderRadius: {
     			lg: 'var(--radius)',
