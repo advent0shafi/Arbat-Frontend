@@ -3,6 +3,99 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion" // NEW: Import Framer Motion
+
+type NavItem = {
+  title: string
+  href?: string
+  children?: NavItem[]
+}
+
+const navItems: NavItem[] = [
+  {
+    title: "Business Setup",
+    children: [
+      {
+        title: "MAIN LAND",
+        children: [
+          { title: "Overview", href: "#" },
+          { title: "Business Activities", href: "#" },
+          { title: "Sponsorship", href: "#" },
+          { title: "Company Registration", href: "/company-registration" },
+          { title: "Mainland Visas", href: "#" },
+          { title: "VirtuFit", href: "#" },
+        ],
+      },
+      {
+        title: "FREE ZONE",
+        children: [
+          { title: "Overview", href: "/free-zone-company-setup" },
+          { title: "Business Activities", href: "/free-zone-business-activities" },
+          { title: "Free Zone License", href: "/free-zone-license-locations" },
+          { title: "Locations and Pricing", href: "#" },
+          { title: "UAE Residence Visa", href: "/uae-residence-visa" },
+          { title: "Registration Process", href: "#" },
+          { title: "Our Solution", href: "/our-solution" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Accounting & Tax",
+    children: [
+      { title: "Overview", href: "#" },
+      { title: "Sponsorship", href: "#" },
+      { title: "Dubai Mainland License", href: "#" },
+    ],
+  },
+  {
+    title: "Services",
+    children: [
+      {
+        title: "CORPORATE SERVICES",
+        children: [
+          { title: "Business Consulting & Setup", href: "#" },
+          { title: "Golden Visa Assistance", href: "#" },
+          { title: "PRO Services", href: "#" },
+          { title: "Accounting & Compliance", href: "#" },
+          { title: "Government Services", href: "#" },
+        ],
+      },
+      {
+        title: "LUXURY SERVICES",
+        children: [
+          { title: "Jet Chartering", href: "#" },
+          { title: "Luxury Real Estate", href: "#" },
+          { title: "VIP Concierge", href: "#" },
+        ],
+      },
+      {
+        title: "SPECIALIZED SOLUTIONS",
+        children: [
+          { title: "Trademark Registration", href: "#" },
+          { title: "HSE Compliance", href: "#" },
+          { title: "Virtual Office Setup", href: "#" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    children: [
+      { title: "About", href: "#" },
+      { title: "Setup Guides", href: "#" },
+      { title: "Press", href: "#" },
+      { title: "Infographics", href: "#" },
+      { title: "Get a Trade License", href: "#" },
+      { title: "E-commerce licence", href: "#" },
+      { title: "How to start a business in Dubai", href: "#" },
+      { title: "Our Partners", href: "#" },
+      { title: "FAQs", href: "#" },
+      { title: "Support Services", href: "#" },
+    ],
+  },
+  { title: "Contact Us", href: "/contact" },
+]
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,13 +105,16 @@ export function NavBar() {
     setActiveDropdown(activeDropdown === menu ? null : menu)
   }
 
+  // This function will be passed to mobile nav items to close the mobile menu when a link is clicked.
+  const closeMobileNav = () => setIsOpen(false)
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center">
             <Image
-            src={'/logo/logo_001.png'}
+              src={'/logo/logo_001.png'}
               alt="Arbat Corporate Services"
               width={120}
               height={40}
@@ -55,10 +151,9 @@ export function NavBar() {
                         </li>
                         <li>
                           <Link href="/company-registration" className="block text-sm hover:text-[#ac1b13]">
-                          Company Registration
+                            Company Registration
                           </Link>
                         </li>
-                        
                         <li>
                           <Link href="#" className="block text-sm hover:text-[#ac1b13]">
                             Mainland Visas
@@ -85,7 +180,7 @@ export function NavBar() {
                           </Link>
                         </li>
                         <li>
-                          <Link href="/free-zone-license-locations " className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="/free-zone-license-locations" className="block text-sm hover:text-[#ac1b13]">
                             Free Zone License
                           </Link>
                         </li>
@@ -105,7 +200,7 @@ export function NavBar() {
                           </Link>
                         </li>
                         <li>
-                          <Link href="#" className="block text-sm hover:text-[#ac1b13]">
+                          <Link href="/our-solution" className="block text-sm hover:text-[#ac1b13]">
                             Our Solution
                           </Link>
                         </li>
@@ -335,51 +430,95 @@ export function NavBar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              >
-                Business Setup
-              </Link>
-              <Link
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              >
-                Accounting & Tax
-              </Link>
-              <Link
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              >
-                Services
-              </Link>
-              <Link
-                href="#"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              >
-                Resources
-              </Link>
-              <Link
-                href="/contact"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-              >
-                Contact Us
-              </Link>
+        {/* Mobile Menu with Framer Motion Animation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className="h-screen"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              {navItems.map((item, index) => (
+                <MobileNavItem key={index} item={item} closeMobileNav={closeMobileNav} />
+              ))}
               <Link
                 href="/cost-calculator"
-                className="block px-3 py-2 rounded-md text-base font-medium bg-[#ac1b13] text-white hover:bg-[#ac1b13]/90"
+                onClick={closeMobileNav}
+                className="block px-4 py-2 mt-4 text-center border-t rounded-md text-base font-medium bg-[#ac1b13] text-white hover:bg-[#ac1b13]/90"
               >
                 Cost Calculator
               </Link>
-            </div>
-          </div>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </header>
   )
 }
 
+function MobileNavItem({
+  item,
+  depth = 0,
+  closeMobileNav,
+}: {
+  item: NavItem
+  depth?: number
+  closeMobileNav?: () => void
+}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggleOpen = () => setIsOpen(!isOpen)
+  const paddingClass = `pl-${depth * 4}`
+
+  if (item.children) {
+    return (
+      <div>
+        <button
+          onClick={toggleOpen}
+          className={`w-full text-left py-2 flex justify-between border-t items-center font-poppins  ${paddingClass}`}
+        >
+          {item.title}
+          <svg
+            className={`w-4 h-4 transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        {/* Animate the children menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className="ml-4"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {item.children.map((child, index) => (
+                <MobileNavItem key={index} item={child} depth={depth + 1} closeMobileNav={closeMobileNav} />
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    )
+  }
+
+  return (
+    <Link
+      href={item.href || "#"}
+      // For leaf items, we call closeMobileNav so the entire mobile nav closes on link click.
+      onClick={() => {
+        if (closeMobileNav) closeMobileNav()
+      }}
+      className={`block  py-2 hover:text-rose-700 text-sm font-plus-jakarta border-t font-bold transform  ${paddingClass}`}
+    >
+      {item.title}
+    </Link>
+  )
+}
