@@ -1,5 +1,5 @@
 import HeroCarousel from "./sections/heroanimation";
-import { HeroSection } from "./sections/sectionH1";
+
 import SectionH2 from "./sections/sectionH2";
 import SectionH3 from "./sections/sectionH3";
 import SectionH4 from "./sections/sectionH4";

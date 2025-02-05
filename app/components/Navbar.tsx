@@ -603,7 +603,7 @@ export function NavBar() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="fixed inset-y-0 right-0 w-full max-w-sm bg-gradient-to-b from-white/95 to-gray-50/95 backdrop-blur-md shadow-2xl overflow-y-auto flex flex-col"
+              className="fixed inset-y-0 right-0 w-full max-w-sm bg-gradient-to-b bg-white shadow-2xl overflow-y-auto flex flex-col"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
