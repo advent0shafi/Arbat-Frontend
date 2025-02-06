@@ -1,6 +1,21 @@
+import { Metadata } from "next";
 import FreeZoneHero from "../components/FreeZoneHero";
 import SectionH8 from "../sections/sectionH8";
 import FreeZonesGrid from "./sections/FreeZoneList";
+
+export const metadata: Metadata = {
+  title: "UAE Free Zone License Locations | Arbat Corporate",
+  description:
+    "Explore UAE free zone locations and license options. Compare different free zones and find the perfect location for your business.",
+  keywords: [
+    "UAE free zone locations",
+    "Dubai free zone map",
+    "free zone license UAE",
+    "best free zones UAE",
+    "free zone comparison",
+  ],
+}
+
 
 export default function page() {
   return (

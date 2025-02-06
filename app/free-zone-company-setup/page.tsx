@@ -1,6 +1,22 @@
+import { Metadata } from "next";
 import FreeZoneHero from "../components/FreeZoneHero";
 import SectionH8 from "../sections/sectionH8";
 import BenefitsList from "./section/BenefitsList";
+
+export const metadata: Metadata = {
+  title: "Free Zone Company Setup UAE | Arbat Corporate",
+  description:
+    "Expert guidance for UAE free zone company setup. Get complete assistance with documentation, licensing, and visa processing.",
+  keywords: [
+    "UAE free zone company setup",
+    "Dubai free zone formation",
+    "free zone business setup",
+    "UAE free zone license",
+    "start business in free zone",
+  ],
+  
+}
+
 
 export default function Page() {
   return (

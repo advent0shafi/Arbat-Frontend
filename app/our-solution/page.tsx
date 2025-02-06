@@ -1,6 +1,19 @@
+import { Metadata } from "next";
 import FreeZoneHero from "../components/FreeZoneHero";
 import SectionH8 from "../sections/sectionH8";
 
+export const metadata: Metadata = {
+  title: "Corporate Solutions in UAE | Arbat Corporate",
+  description:
+    "Comprehensive corporate solutions for UAE businesses. From company formation to business support services, we provide end-to-end solutions.",
+  keywords: [
+    "UAE corporate solutions",
+    "business solutions Dubai",
+    "corporate services UAE",
+    "business support Dubai",
+    "UAE company services",
+  ],
+}
 export default function page(){
     return (
         <div className="mt-[64px] ">

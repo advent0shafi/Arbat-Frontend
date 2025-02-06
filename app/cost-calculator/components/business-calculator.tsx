@@ -58,6 +58,6 @@ export default function BusinessCalculator() {
     <Success key="12"  />,
   ]
 
-  return <Layout>{steps[currentStep - 1]}</Layout>
+  return <Layout >{steps[currentStep - 1]}</Layout>
 }
 
