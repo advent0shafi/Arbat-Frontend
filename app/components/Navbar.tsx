@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState} from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion" // NEW: Import Framer Motion
@@ -101,17 +101,6 @@ const navItems: NavItem[] = [
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const [scrolled, setScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20
-      setScrolled(isScrolled)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const toggleDropdown = (menu: string) => {
     setActiveDropdown(activeDropdown === menu ? null : menu)
@@ -122,9 +111,7 @@ export function NavBar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white backdrop-blur-sm shadow-md" : "bg-white/50"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -603,7 +590,7 @@ export function NavBar() {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              className="fixed inset-y-0 right-0 w-full max-w-sm bg-gradient-to-b bg-white shadow-2xl overflow-y-auto flex flex-col"
+              className="fixed inset-0 right-0 w-full  bg-white  shadow-2xl overflow-y-auto flex flex-col"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
