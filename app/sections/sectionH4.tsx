@@ -1,5 +1,5 @@
 import SectionContainer from "../components/section-container";
-import { Company, HandShake } from "../components/svg-components";
+import { Accounts, Building, BulbInverted, Company, CustomerCare, Documnentation, Goverment, HandShake, HSE, LuxuryBag, Passport_Visa, PlaneSVG, TradeMark, VIPSVG } from "../components/svg-components";
 
 export default function SectionH4() {
   return (
@@ -35,7 +35,7 @@ export default function SectionH4() {
             <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
               <div className="absolute -top-14 right-32">
                 <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                  <HandShake />
+                  <Passport_Visa />
                 </div>
               </div>
 
@@ -55,7 +55,7 @@ export default function SectionH4() {
             <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
               <div className="absolute -top-14 right-32">
                 <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                  <HandShake />
+                  <Documnentation />
                 </div>
               </div>
 
@@ -77,7 +77,7 @@ export default function SectionH4() {
             <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
               <div className="absolute -top-14 right-32">
                 <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                  <HandShake />
+                  <Accounts />
                 </div>
               </div>
 
@@ -96,7 +96,7 @@ export default function SectionH4() {
             <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
               <div className="absolute -top-14 right-32">
                 <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                  <HandShake />
+                  <Goverment />
                 </div>
               </div>
 
@@ -115,7 +115,7 @@ export default function SectionH4() {
           </div>
 
           <div className="flex flex-col items-center mt-[80px]">
-            <Company />
+            <LuxuryBag />
             <h2 className="font-plus-jakarta font-bold text-[32px] leading-[48px] mt-[16px]">
             Luxury Services
             </h2>
@@ -123,7 +123,7 @@ export default function SectionH4() {
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
                 <div className="absolute -top-14 right-32">
                   <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                    <HandShake />
+                    <PlaneSVG />
                   </div>
                 </div>
 
@@ -142,7 +142,7 @@ export default function SectionH4() {
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
                 <div className="absolute -top-14 right-32">
                   <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                    <HandShake />
+                    <Building />
                   </div>
                 </div>
 
@@ -162,7 +162,7 @@ export default function SectionH4() {
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
                 <div className="absolute -top-14 right-32">
                   <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                    <HandShake />
+                    <VIPSVG />
                   </div>
                 </div>
 
@@ -181,7 +181,7 @@ export default function SectionH4() {
             </div>
           </div>
           <div className="flex flex-col items-center mt-[80px]">
-            <Company />
+            <BulbInverted />
             <h2 className="font-plus-jakarta font-bold text-[32px] leading-[48px] mt-[16px]">
             Specialized Solutions
             </h2>
@@ -189,7 +189,7 @@ export default function SectionH4() {
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
                 <div className="absolute -top-14 right-32">
                   <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                    <HandShake />
+                    <TradeMark />
                   </div>
                 </div>
 
@@ -209,7 +209,7 @@ export default function SectionH4() {
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
                 <div className="absolute -top-14 right-32">
                   <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                    <HandShake />
+                    <HSE />
                   </div>
                 </div>
 
@@ -229,7 +229,7 @@ export default function SectionH4() {
               <div className="border border-gray-200 rounded-[12px] py-[75px] px-[32px] relative mt-[96px]">
                 <div className="absolute -top-14 right-32">
                   <div className="w-[112px] h-[122px] rounded-full bg-gray-100 flex flex-col justify-center items-center ">
-                    <HandShake />
+                    <CustomerCare />
                   </div>
                 </div>
 
