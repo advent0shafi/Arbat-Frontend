@@ -23,7 +23,7 @@ export default function page() {
       <FreeZoneHero
       catogery="Free Zone"
         professionalImagesrc="people-16.png"
-        title="Free Zone License Locations and Pricingx"
+        title="Free Zone License Locations and Pricing"
         descriptions="The Free Zone jurisdiction offers 100% foreign ownership, making it an ideal choice for wholesale distributors, re-exporters, warehousing operations, service providers, and manufacturers focusing on markets beyond the MENA region."
       />
       <FreeZonesGrid />
