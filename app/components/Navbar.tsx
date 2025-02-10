@@ -21,7 +21,6 @@ const navItems: NavItem[] = [
         children: [
           { title: "Overview", href: "/main-land-overview" },
           { title: "Sponsorship", href: "/main-land-sponsorship" },
-          { title: "Company Registration", href: "/company-registration" },
           {
             title: "Dubai Mainland License",
             href: "/main-land-dubai-mainland-license",
