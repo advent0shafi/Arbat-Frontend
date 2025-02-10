@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import ServicesSection from "../components/Service_cards";
+import Link from "next/link";
 
 const slides = [
   {
@@ -11,24 +12,29 @@ const slides = [
     title: "Business Setup Is Just The Beginning",
     description: "Mainland | Free Zone | Offshore | KSA | Qatar",
     buttonText: "GET START NOW",
+    href:"/free-zone-overview",
   },
   {
     image: "/images/corporate-people-02.jpg",
-    title: "Luxury Jewelry Collection",
-    description: "Discover our handcrafted pieces made with precision and care",
-    buttonText: "SHOP NOW",
+    title: "How Much Does Business Setup In Dubai Cost?",
+    description: "That depends. What is your business activity? Free zone or mainland? How many visas or shareholders? From our experience with business setup in Dubai for over 80,000 entrepreneurs, we have created the Business Setup Cost Calculator to give you the answer.",
+    buttonText: "Cost Calculator",
+    href:"/cost-calculator",
   },
   {
     image: "/images/corporate-people-03.jpg",
-    title: "Premium Gold Collection",
-    description: "Elegant designs that make a statement",
-    buttonText: "EXPLORE MORE",
+    title: "Should you undertake business setup in Dubai yourself?",
+    description: "Wondering if you can start a Dubai company yourself? You can. But there are some things you need to know.",
+    buttonText: "Cost Calculator",
+    href:"/cost-calculator",
+
   },
   {
     image: "/images/corporate-people-04.jpg",
-    title: "Timeless Beauty",
-    description: "Fine jewelry for every occasion",
-    buttonText: "VIEW COLLECTION",
+    title: "The process of business setup in Dubai",
+    description: "With Arbat as your company formation partner, registering a company in the UAE is not only easy, but it’s the most cost-effective way to do it! In fact, the entire process can take as little as 24 hours! That’s right! All you have to do is supply us with the relevant information about your company and we do the rest.  Here’s our time-tested process:",
+    buttonText: "Cost Calculator",
+    href:"/cost-calculator",
   },
 ];
 
@@ -59,7 +65,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative h-screen w-full  bg-black ">
+    <div className="relative h-screen w-full  bg-black mt-[64px] ">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentIndex}
@@ -75,8 +81,8 @@ export default function HeroCarousel() {
           className="absolute inset-0 "
         >
           {/* Image Background */}
-          <div className="relative h-full w-full">
-            <div className="absolute inset-0 bg-hero-pattern-md   z-10" />{" "}
+          <div className="relative h-full w-full " >
+            <div className="absolute inset-0    z-10" />{" "}
             {/* Overlay */}
             <Image
               src={slides[currentIndex].image || "/placeholder.svg"}
@@ -107,7 +113,7 @@ export default function HeroCarousel() {
                 >
                   {slides[currentIndex].description}
                 </motion.p>
-
+<Link href={`${slides[currentIndex].href}`} >
                 <motion.button
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
@@ -116,6 +122,7 @@ export default function HeroCarousel() {
                 >
                   {slides[currentIndex].buttonText}
                 </motion.button>
+                </Link>
               </div>
             </div>
           </div>
