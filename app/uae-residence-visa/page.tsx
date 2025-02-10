@@ -21,6 +21,7 @@ export default function Page() {
     return (
       <div className="mt-[64px] ">
         <FreeZoneHero
+         catogery="Free Zone"
           professionalImagesrc="people-14.png"
                     title="UAE Residence Visa"
           descriptions="The UAE, known as the jewel of the Middle East, offers a vibrant economy and luxurious lifestyle, making it a prime destination for individuals looking to invest, start businesses, or relocate. Whether it’s Dubai’s cutting-edge infrastructure or Abu Dhabi’s cultural richness, the UAE is an ideal place to live and work.

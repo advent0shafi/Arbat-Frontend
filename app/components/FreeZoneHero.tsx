@@ -5,8 +5,9 @@ interface FreeZoneHeroProps {
     professionalImagesrc: string;
     title:string;
     descriptions:string;
+    catogery:string;
 }
-export default function FreeZoneHero({ professionalImagesrc,title,descriptions }: FreeZoneHeroProps) {
+export default function FreeZoneHero({ professionalImagesrc,title,descriptions,catogery }: FreeZoneHeroProps) {
   return (
     <div className="relative overflow-hidden max-h-[586px] ">
       <Image
@@ -21,7 +22,7 @@ export default function FreeZoneHero({ professionalImagesrc,title,descriptions }
           <div className="flex flex-col justify-center items-end h-[586px] max-w-[500px]  ">
           <div className="">
             <h3 className="font-plus-jakarta font-medium text-[20px] leading-[24px] text-white">
-              Free Zone
+             {catogery}
             </h3>
             <h2 className="font-plus-jakarta font-extrabold  text-[34px] leading-[43.6px] text-white">
              {title}

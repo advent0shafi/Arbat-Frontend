@@ -21,45 +21,59 @@ export default function Footer() {
     {
       title: "Free Zone",
       links: [
-        "Overview",
-        "Sponsorship",
-        "Dubai Mainland License",
-        "Business Activities",
-        "Mainland Visas",
-        "VirtuFit",
+        { name: "Overview", href: "/free-zone/overview" },
+        { name: "Sponsorship", href: "/free-zone/sponsorship" },
+        {
+          name: "Dubai Mainland License",
+          href: "/free-zone/dubai-mainland-license",
+        },
+        { name: "Business Activities", href: "/free-zone/business-activities" },
+        { name: "Mainland Visas", href: "/free-zone/mainland-visas" },
+        { name: "VirtuFit", href: "/free-zone/virtufit" },
       ],
     },
     {
       title: "Main Land",
       links: [
-        "Overview",
-        "Business Activities",
-        "Free Zone License Locations and Pricing",
-        "UAE Residence Visa",
-        "Registration Process",
-        "Our Solution",
+        { name: "Overview", href: "/free-zone-overview" },
+        {
+          name: "Business Activities",
+          href: "/free-zone-business-activities",
+        },
+        { name: "Free Zone License", href: "/free-zone-license-locations" },
+        { name: "Locations and Pricing", href: "#" },
+        { name: "UAE Residence Visa", href: "/uae-residence-visa" },
+        {
+          name: "Registration Process",
+          href: "/free-zone-registration-process",
+        },
+        { name: "Our Solution", href: "/our-solution" },
       ],
     },
     {
-      title: "Corporate Services",
+      title: "Financial Services",
       links: [
-        "Business Consulting & Setup",
-        "Golden Visa Assistance",
-        "PRO Services",
-        "Accounting & Compliance",
-        "Government Services:",
+        {
+          name: "Accounting & Tax",
+          href: "/corporate-services/business-consulting",
+        },
       ],
     },
     {
-      title: "Corporate Services",
-      links: ["Jet Chartering", "Luxury Real Estate", "VIP Concierge"],
+      title: "Solutions",
+      links: [
+        { name: "Our Solutions", href: "/luxury-services/jet-chartering" },
+        { name: "Cost Calculator", href: "/cost-calculator" },
+      ],
     },
     {
-      title: "Specialized Solution",
+      title: "Support Center",
       links: [
-        "Trademark Registration",
-        "HSE Compliance",
-        "Virtual Office Setup",
+        {
+          name: "Resources",
+          href: "/specialized-solution/trademark-registration",
+        },
+        { name: "Contact Us", href: "/specialized-solution/hse-compliance" },
       ],
     },
   ];
@@ -87,13 +101,13 @@ export default function Footer() {
               </h2>
               <ul className="space-y-3">
                 {section.links.map((link, linkIdx) => (
-                  <li key={`${link}-${linkIdx}`}>
-                    <a
-                      href="#"
-                      className="text-gray-600 font-poppins  hover:text-gray-900 transition-colors duration-200 text-sm md:text-[14px] md:leading-[21px]"
+                  <li key={`${link.name}-${linkIdx}`}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-600 font-poppins hover:text-gray-900 transition-colors duration-200 text-sm md:text-[14px] md:leading-[21px]"
                     >
-                      {link}
-                    </a>
+                      {link.name}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -138,12 +152,12 @@ export default function Footer() {
               >
                 <ul className="space-y-3">
                   {section.links.map((link, linkIdx) => (
-                    <li key={`mobile-${link}-${linkIdx}`}>
+                    <li key={`mobile-${link.name}-${linkIdx}`}>
                       <Link
-                        href="#"
+                        href={link.href}
                         className="text-gray-600 hover:text-gray-900 text-sm"
                       >
-                        {link}
+                        {link.name}
                       </Link>
                     </li>
                   ))}
@@ -158,7 +172,7 @@ export default function Footer() {
           {/* Phone */}
           <div className="flex items-center justify-center md:justify-start gap-3">
             <div className="w-10 h-10 rounded-full  flex items-center justify-center flex-shrink-0">
-             <PhoneSVG/>
+              <PhoneSVG />
             </div>
             <div className="text-left">
               <div className="text-sm text-[#E91E63] font-medium">
@@ -176,7 +190,7 @@ export default function Footer() {
           {/* Email */}
           <div className="flex items-center justify-center md:justify-start gap-3">
             <div className="w-10 h-10 rounded-full  flex items-center justify-center flex-shrink-0">
-              <EmailSVG/>
+              <EmailSVG />
             </div>
             <div className="text-left">
               <div className="text-sm text-[#E91E63] font-medium">Email</div>
@@ -192,14 +206,14 @@ export default function Footer() {
           {/* WhatsApp */}
           <div className="flex items-center justify-center md:justify-start gap-3">
             <div className="w-10 h-10 rounded-full  flex items-center justify-center flex-shrink-0">
-             <WhatsaAppSVG/>
+              <WhatsaAppSVG />
             </div>
             <div className="text-left">
               <div className="text-sm text-[#25D366] font-medium">
                 What&apos;sapp
               </div>
               <a
-                href="#"
+                href="https://wa.me/971505157864"
                 className="text-gray-900 text-sm hover:text-[#25D366] transition-colors duration-200 underline"
               >
                 Start Chat

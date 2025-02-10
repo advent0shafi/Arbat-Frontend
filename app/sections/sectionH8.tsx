@@ -10,17 +10,17 @@ export default function SectionH8() {
           <h2 className="font-plus-jakarta font-bold text-[32px] leading-[48px] ">
           We take care of your business
           </h2>
-            <p className="mt-[8px] leading-[33px] text-[22px] font-normal text-[#AC1B13] ">So you can take care of business</p>
-            <p className="mt-6 text-[20px] font-poppins leading-[30px] text-gray-600">
+            <p className="mt-[8px] md:leading-[33px] text-[18px] leading-[24px] md:text-[22px] font-normal text-[#AC1B13] ">So you can take care of business</p>
+            <p className="mt-6 font-poppins md:leading-[30px] text-[16px] leading-[24px] md:text-[20px] text-gray-600">
               Our business support packages are here to help you beat the competition.
             </p>
-            <p className="mt-6 text-[20px] font-poppins leading-[30px] text-gray-600">
+            <p className="mt-6  font-poppins md:leading-[30px] text-[16px] leading-[24px] md:text-[20px] text-gray-600">
               For startups and business owners in the UAE it can be invaluable to have a specialist company taking care of
               the many tasks involved in establishing a successful brand and commercial presence. If you want to take the
               UAE by storm, you need an expert who can give you not only the benefit of their experience but support much
               beyond the initial paperwork.
             </p>
-            <p className="mt-6 text-[20px] font-poppins leading-[30px] text-gray-600">
+            <p className="mt-6 font-poppins md:leading-[30px] text-[16px] leading-[24px] md:text-[20px] text-gray-600">
               Our many support services are inspired by our clients&apos; daily needs and have been designed especially to help
               you get the ball rolling and focus on what really matters.
             </p>

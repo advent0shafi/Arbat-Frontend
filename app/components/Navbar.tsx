@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { useState} from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion" // NEW: Import Framer Motion
-import { Facebook, Instagram, Linkedin, Twitter, X } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion"; // NEW: Import Framer Motion
+import { Facebook, Instagram, Linkedin, Twitter, X } from "lucide-react";
 
 type NavItem = {
-  title: string
-  href?: string
-  children?: NavItem[]
-}
+  title: string;
+  href?: string;
+  children?: NavItem[];
+};
 
 const navItems: NavItem[] = [
   {
@@ -19,23 +19,31 @@ const navItems: NavItem[] = [
       {
         title: "MAIN LAND",
         children: [
-          { title: "Overview", href: "#" },
-          { title: "Business Activities", href: "#" },
-          { title: "Sponsorship", href: "#" },
+          { title: "Overview", href: "/main-land-overview" },
+          { title: "Sponsorship", href: "/main-land-sponsorship" },
           { title: "Company Registration", href: "/company-registration" },
-          { title: "Mainland Visas", href: "#" },
-          { title: "VirtuFit", href: "#" },
+          {
+            title: "Dubai Mainland License",
+            href: "/main-land-dubai-mainland-license",
+          },
+          {
+            title: "Business Activities",
+            href: "/main-land-business-activities",
+          },
         ],
       },
       {
         title: "FREE ZONE",
         children: [
-          { title: "Overview", href: "/free-zone-company-setup" },
-          { title: "Business Activities", href: "/free-zone-business-activities" },
+          { title: "Overview", href: "/free-zone-overview" },
+          {
+            title: "Business Activities",
+            href: "/free-zone-business-activities",
+          },
           { title: "Free Zone License", href: "/free-zone-license-locations" },
           { title: "Locations and Pricing", href: "#" },
           { title: "UAE Residence Visa", href: "/uae-residence-visa" },
-          { title: "Registration Process", href: "#" },
+          { title: "Registration Process", href: "/free-zone-registration-process" },
           { title: "Our Solution", href: "/our-solution" },
         ],
       },
@@ -43,71 +51,29 @@ const navItems: NavItem[] = [
   },
   {
     title: "Accounting & Tax",
-    children: [
-      { title: "Overview", href: "#" },
-      { title: "Sponsorship", href: "#" },
-      { title: "Dubai Mainland License", href: "#" },
-    ],
+    href: "/contact",
   },
   {
     title: "Services",
-    children: [
-      {
-        title: "CORPORATE SERVICES",
-        children: [
-          { title: "Business Consulting & Setup", href: "#" },
-          { title: "Golden Visa Assistance", href: "#" },
-          { title: "PRO Services", href: "#" },
-          { title: "Accounting & Compliance", href: "#" },
-          { title: "Government Services", href: "#" },
-        ],
-      },
-      {
-        title: "LUXURY SERVICES",
-        children: [
-          { title: "Jet Chartering", href: "#" },
-          { title: "Luxury Real Estate", href: "#" },
-          { title: "VIP Concierge", href: "#" },
-        ],
-      },
-      {
-        title: "SPECIALIZED SOLUTIONS",
-        children: [
-          { title: "Trademark Registration", href: "#" },
-          { title: "HSE Compliance", href: "#" },
-          { title: "Virtual Office Setup", href: "#" },
-        ],
-      },
-    ],
+    href: "/contact",
   },
   {
     title: "Resources",
-    children: [
-      { title: "About", href: "#" },
-      { title: "Setup Guides", href: "#" },
-      { title: "Press", href: "#" },
-      { title: "Infographics", href: "#" },
-      { title: "Get a Trade License", href: "#" },
-      { title: "E-commerce licence", href: "#" },
-      { title: "How to start a business in Dubai", href: "#" },
-      { title: "Our Partners", href: "#" },
-      { title: "FAQs", href: "#" },
-      { title: "Support Services", href: "#" },
-    ],
+    href: "/contact",
   },
   { title: "Contact Us", href: "/contact" },
-]
+];
 
 export function NavBar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const toggleDropdown = (menu: string) => {
-    setActiveDropdown(activeDropdown === menu ? null : menu)
-  }
+    setActiveDropdown(activeDropdown === menu ? null : menu);
+  };
 
   // This function will be passed to mobile nav items to close the mobile menu when a link is clicked.
-  const closeMobileNav = () => setIsOpen(false)
+  const closeMobileNav = () => setIsOpen(false);
 
   return (
     <header
@@ -144,27 +110,22 @@ export function NavBar() {
                 >
                   <div className="grid grid-cols-2 gap-8">
                     <div>
-                      <h3 className="font-semibold mb-3 text-sm text-gray-500">MAIN LAND</h3>
+                      <h3 className="font-semibold mb-3 text-sm text-gray-500">
+                        MAIN LAND
+                      </h3>
                       <ul className="space-y-2">
                         <li>
                           <Link
-                            href="#"
+                            href="/main-land-overview"
                             className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
                           >
                             Overview
                           </Link>
                         </li>
+
                         <li>
                           <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Business Activities
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
+                            href="/main-land-sponsorship"
                             className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
                           >
                             Sponsorship
@@ -172,36 +133,30 @@ export function NavBar() {
                         </li>
                         <li>
                           <Link
-                            href="/company-registration"
+                            href="/main-land-dubai-mainland-license"
                             className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
                           >
-                            Company Registration
+                            Dubai Mainland License
                           </Link>
                         </li>
                         <li>
                           <Link
-                            href="#"
+                            href="/main-land-business-activities"
                             className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
                           >
-                            Mainland Visas
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            VirtuFit
+                            Business Activities
                           </Link>
                         </li>
                       </ul>
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-3 text-sm text-gray-500">FREE ZONE</h3>
+                      <h3 className="font-semibold mb-3 text-sm text-gray-500">
+                        FREE ZONE
+                      </h3>
                       <ul className="space-y-2">
                         <li>
                           <Link
-                            href="/free-zone-company-setup"
+                            href="/free-zone-overview"
                             className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
                           >
                             Overview
@@ -220,17 +175,10 @@ export function NavBar() {
                             href="/free-zone-license-locations"
                             className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
                           >
-                            Free Zone License
+                            Free Zone License And Location And Price
                           </Link>
                         </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Locations and Pricing
-                          </Link>
-                        </li>
+
                         <li>
                           <Link
                             href="/uae-residence-visa"
@@ -241,7 +189,7 @@ export function NavBar() {
                         </li>
                         <li>
                           <Link
-                            href="#"
+                            href="/free-zone-registration-process"
                             className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
                           >
                             Registration Process
@@ -269,42 +217,6 @@ export function NavBar() {
               >
                 Accounting & Tax
               </button>
-              {activeDropdown === "accounting" && (
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute left-0 mt-2 w-[300px] bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-md shadow-lg p-6"
-                >
-                  <ul className="space-y-2">
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Overview
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Sponsorship
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Dubai Mainland License
-                      </Link>
-                    </li>
-                  </ul>
-                </motion.div>
-              )}
             </div>
 
             <div className="relative group">
@@ -314,121 +226,6 @@ export function NavBar() {
               >
                 Services
               </button>
-              {activeDropdown === "services" && (
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute -left-96 mt-2 w-[800px] bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-md shadow-lg p-6"
-                >
-                  <div className="grid grid-cols-3 gap-8">
-                    <div>
-                      <h3 className="font-semibold mb-3 text-sm text-gray-500">CORPORATE SERVICES</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Business Consulting & Setup
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Golden Visa Assistance
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            PRO Services
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Accounting & Compliance
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Government Services
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-3 text-sm text-gray-500">LUXURY SERVICES</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Jet Chartering
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Luxury Real Estate
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            VIP Concierge
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-3 text-sm text-gray-500">SPECIALIZED SOLUTIONS</h3>
-                      <ul className="space-y-2">
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Trademark Registration
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            HSE Compliance
-                          </Link>
-                        </li>
-                        <li>
-                          <Link
-                            href="#"
-                            className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                          >
-                            Virtual Office Setup
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
             </div>
 
             <div className="relative group">
@@ -438,98 +235,6 @@ export function NavBar() {
               >
                 Resources
               </button>
-              {activeDropdown === "resources" && (
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="absolute left-0 mt-2 w-[300px] bg-white/95 backdrop-blur-sm border border-gray-200/50 rounded-md shadow-lg p-6"
-                >
-                  <ul className="space-y-2">
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Setup Guides
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Press
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Infographics
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Get a Trade License
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        E-commerce licence
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        How to start a business in Dubai
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Our Partners
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        FAQs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href="#"
-                        className="block text-sm transition-all duration-200 hover:text-[#ac1b13] hover:translate-x-1"
-                      >
-                        Support Services
-                      </Link>
-                    </li>
-                  </ul>
-                </motion.div>
-              )}
             </div>
 
             <Link
@@ -580,7 +285,11 @@ export function NavBar() {
                 stroke="currentColor"
                 className="w-6 h-6"
               >
-                <path d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path>
+                <path
+                  d={
+                    isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                  }
+                ></path>
               </svg>
             </button>
           </div>
@@ -620,7 +329,11 @@ export function NavBar() {
               {/* Navigation Items */}
               <div className="flex-1 overflow-y-auto px-4 py-6">
                 {navItems.map((item, index) => (
-                  <MobileNavItem key={index} item={item} closeMobileNav={closeMobileNav} />
+                  <MobileNavItem
+                    key={index}
+                    item={item}
+                    closeMobileNav={closeMobileNav}
+                  />
                 ))}
               </div>
 
@@ -675,7 +388,7 @@ export function NavBar() {
         </AnimatePresence>
       </div>
     </header>
-  )
+  );
 }
 
 function MobileNavItem({
@@ -683,13 +396,13 @@ function MobileNavItem({
   depth = 0,
   closeMobileNav,
 }: {
-  item: NavItem
-  depth?: number
-  closeMobileNav?: () => void
+  item: NavItem;
+  depth?: number;
+  closeMobileNav?: () => void;
 }) {
-  const [isOpen, setIsOpen] = useState(false)
-  const toggleOpen = () => setIsOpen(!isOpen)
-  const paddingClass = `pl-${depth * 4}`
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleOpen = () => setIsOpen(!isOpen);
+  const paddingClass = `pl-${depth * 4}`;
 
   if (item.children) {
     return (
@@ -700,13 +413,20 @@ function MobileNavItem({
         >
           {item.title}
           <svg
-            className={`w-4 h-4 transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+            className={`w-4 h-4 transition-transform ${
+              isOpen ? "transform rotate-180" : ""
+            }`}
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 9l-7 7-7-7"
+            />
           </svg>
         </button>
         {/* Animate the children menu */}
@@ -720,13 +440,18 @@ function MobileNavItem({
               transition={{ duration: 0.2 }}
             >
               {item.children.map((child, index) => (
-                <MobileNavItem key={index} item={child} depth={depth + 1} closeMobileNav={closeMobileNav} />
+                <MobileNavItem
+                  key={index}
+                  item={child}
+                  depth={depth + 1}
+                  closeMobileNav={closeMobileNav}
+                />
               ))}
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-    )
+    );
   }
 
   return (
@@ -734,12 +459,11 @@ function MobileNavItem({
       href={item.href || "#"}
       // For leaf items, we call closeMobileNav so the entire mobile nav closes on link click.
       onClick={() => {
-        if (closeMobileNav) closeMobileNav()
+        if (closeMobileNav) closeMobileNav();
       }}
       className={`block py-3 text-gray-800 text-base font-plus-jakarta border-b border-gray-100 font-medium transform transition-all duration-200 hover:text-[#ac1b13] hover:pl-2 ${paddingClass}`}
     >
       {item.title}
     </Link>
-  )
+  );
 }
-

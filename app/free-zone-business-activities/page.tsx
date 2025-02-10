@@ -21,6 +21,7 @@ export default function page() {
   return (
     <div className="mt-[64px] ">
       <FreeZoneHero
+       catogery="Free Zone"
         professionalImagesrc="people-15.png"
         title="Business Activities"
         descriptions="The Free Zone jurisdiction offers 100% foreign ownership, making it an ideal choice for wholesale distributors, re-exporters, warehousing operations, service providers, and manufacturers focusing on markets beyond the MENA region."
