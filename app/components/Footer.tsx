@@ -55,7 +55,7 @@ export default function Footer() {
       links: [
         {
           name: "Accounting & Tax",
-          href: "/corporate-services/business-consulting",
+          href: "/accounting-tax",
         },
       ],
     },
@@ -71,7 +71,7 @@ export default function Footer() {
       links: [
         {
           name: "Resources",
-          href: "/specialized-solution/trademark-registration",
+          href: "/resources",
         },
         { name: "Contact Us", href: "/specialized-solution/hse-compliance" },
       ],

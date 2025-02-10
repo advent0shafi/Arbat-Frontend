@@ -94,7 +94,7 @@ export default function ServicesList() {
   
     return (
         <SectionContainer>
-      <div className="max-w-5xl mx-auto px-6 py-[126px] space-y-4">
+      <div className="mx-auto px-6 py-[126px] space-y-4">
         {services.map((service) => (
           <div key={service.id} className="border border-[#AC1B13] rounded-lg py-[28px] px-[56px] relative">
             <div className="flex items-start gap-4">

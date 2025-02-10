@@ -43,7 +43,10 @@ const navItems: NavItem[] = [
           { title: "Free Zone License", href: "/free-zone-license-locations" },
           { title: "Locations and Pricing", href: "#" },
           { title: "UAE Residence Visa", href: "/uae-residence-visa" },
-          { title: "Registration Process", href: "/free-zone-registration-process" },
+          {
+            title: "Registration Process",
+            href: "/free-zone-registration-process",
+          },
           { title: "Our Solution", href: "/our-solution" },
         ],
       },
@@ -51,17 +54,17 @@ const navItems: NavItem[] = [
   },
   {
     title: "Accounting & Tax",
-    href: "/contact",
+    href: "/accounting-tax",
   },
   {
     title: "Services",
-    href: "/contact",
+    href: "/services",
   },
   {
     title: "Resources",
-    href: "/contact",
+    href: "/resources",
   },
-  { title: "Contact Us", href: "/contact" },
+  { title: "Contact Us", href: "/contact-us" },
 ];
 
 export function NavBar() {
@@ -77,7 +80,7 @@ export function NavBar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-xl`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -211,55 +214,38 @@ export function NavBar() {
             </div>
 
             <div className="relative group">
-              <button
-                onClick={() => toggleDropdown("accounting")}
-                className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300"
-              >
-                Accounting & Tax
-              </button>
+              <Link href={"/accounting-tax"}>
+                <button className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300">
+                  Accounting & Tax
+                </button>
+              </Link>
             </div>
 
             <div className="relative group">
-              <button
-                onClick={() => toggleDropdown("services")}
-                className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300"
-              >
-                Services
-              </button>
+              <Link href={"/resources"}>
+                <button className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300">
+                  Services
+                </button>
+              </Link>
             </div>
 
             <div className="relative group">
-              <button
-                onClick={() => toggleDropdown("resources")}
-                className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300"
-              >
-                Resources
-              </button>
+              <Link href={"/resources"}>
+                <button className="text-gray-600 hover:text-gray-900 py-2 relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#ac1b13] after:transition-all after:duration-300">
+                  Resources
+                </button>
+              </Link>
             </div>
 
             <Link
-              href="/contact"
+              href="/contact-us"
               className="text-gray-600 hover:text-gray-900 transition-all duration-200 hover:translate-x-1"
             >
               Contact Us
             </Link>
 
             <button className="p-2 text-gray-600 hover:text-gray-900 transition-all duration-200 hover:translate-x-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-              <span className="sr-only">Search</span>
+         
             </button>
 
             <Link
