@@ -43,10 +43,7 @@ export default function Footer() {
         { name: "Free Zone License", href: "/free-zone-license-locations" },
         { name: "Locations and Pricing", href: "#" },
         { name: "UAE Residence Visa", href: "/uae-residence-visa" },
-        {
-          name: "Registration Process",
-          href: "/free-zone-registration-process",
-        },
+       
         { name: "Our Solution", href: "/our-solution" },
       ],
     },
