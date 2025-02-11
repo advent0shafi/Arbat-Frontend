@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
-import SectionContainer from "../components/section-container"
+import SectionContainer from "@/app/components/section-container"
 import Link from "next/link"
 
 const AnimatedText = ({ children, className }: { children: React.ReactNode; className?: string }) => {
@@ -67,7 +67,7 @@ const AnimatedArticle = ({ article, index }: { article: Article; index: number }
   )
 }
 
-export default function BlogPage() {
+export default function SectionBlogpage() {
   const articles = [
     {
       title: "The Ultimate Guide to UAE Free Zone Business Setup",
@@ -101,8 +101,6 @@ export default function BlogPage() {
     },
   ]
 
-  const buttonRef = useRef(null)
-  const isButtonInView = useInView(buttonRef, { once: true, amount: 0.5 })
 
   return (
     <SectionContainer>
@@ -126,19 +124,17 @@ export default function BlogPage() {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           ref={buttonRef}
           initial={{ opacity: 0, y: 20 }}
           animate={isButtonInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12 text-center"
         >
-          <Link href={"/blog"}>
           <button className="inline-flex items-center justify-center px-6 py-3 border border-red-600 text-red-600 font-medium rounded-md hover:bg-red-50 transition-colors">
             View All Blog Posts
           </button>
-          </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </SectionContainer>
   )
